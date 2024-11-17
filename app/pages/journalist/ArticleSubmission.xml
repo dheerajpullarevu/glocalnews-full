@@ -1,0 +1,37 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+  <ActionBar title="Submit Article">
+    <ActionItem ios.position="right" android.position="actionBar" tap="{{ startVoiceRecognition }}">
+      <Label text="&#xf130;" class="fas" />
+    </ActionItem>
+  </ActionBar>
+
+  <ScrollView>
+    <StackLayout class="p-4">
+      <Label text="Title" class="font-bold mb-2" />
+      <TextField text="{{ title }}" hint="Enter article title" class="mb-4 p-2 border rounded" />
+
+      <Label text="Content" class="font-bold mb-2" />
+      <GridLayout rows="auto" columns="*,auto" class="mb-4">
+        <TextView 
+          text="{{ content }}" 
+          hint="Start writing or use voice input" 
+          row="0" 
+          col="0"
+          class="p-2 border rounded" 
+          height="200" />
+        <Button 
+          text="&#xf130;" 
+          tap="{{ startVoiceRecognition }}" 
+          row="0" 
+          col="1"
+          class="fas text-red-600" />
+      </GridLayout>
+
+      <!-- Other fields -->
+      <Button 
+        text="Submit Article" 
+        tap="{{ submitArticle }}" 
+        class="bg-red-600 text-white p-4 rounded" />
+    </StackLayout>
+  </ScrollView>
+</Page>

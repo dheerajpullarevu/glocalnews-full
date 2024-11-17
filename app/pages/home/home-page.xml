@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+  <ActionBar title="Glocal News">
+    <ActionItem ios.position="right" android.position="actionBar" tap="onLanguageChange">
+      <Label text="&#xf57d;" class="fas" />
+    </ActionItem>
+    <ActionItem ios.position="right" android.position="actionBar" tap="onProfileTap">
+      <Label text="&#xf007;" class="fas" />
+    </ActionItem>
+  </ActionBar>
+
+  <GridLayout rows="auto, *, auto">
+    <!-- Categories -->
+    <ScrollView row="0" orientation="horizontal" class="p-2 bg-white">
+      <StackLayout orientation="horizontal">
+        <Label text="All" tap="{{ onCategoryTap }}" class="p-2 m-1 rounded-full" />
+        <Label text="Local" tap="{{ onCategoryTap }}" class="p-2 m-1 rounded-full" />
+        <Label text="Politics" tap="{{ onCategoryTap }}" class="p-2 m-1 rounded-full" />
+        <Label text="Business" tap="{{ onCategoryTap }}" class="p-2 m-1 rounded-full" />
+        <Label text="Technology" tap="{{ onCategoryTap }}" class="p-2 m-1 rounded-full" />
+      </StackLayout>
+    </ScrollView>
+
+    <!-- News Feed -->
+    <ListView row="1" items="{{ articles }}" itemTap="onArticleTap" class="list-group">
+      <ListView.itemTemplate>
+        <GridLayout rows="auto, auto" columns="*, auto" class="list-group-item p-2">
+          <Image row="0" rowSpan="2" col="0" src="{{ imageUrl }}" class="w-full h-48 rounded" />
+          <Label row="0" col="1" text="{{ title }}" class="text-lg font-bold p-2" textWrap="true" />
+          <Label row="1" col="1" text="{{ summary }}" class="text-sm text-gray-500 p-2" textWrap="true" />
+          <StackLayout row="1" col="1" orientation="horizontal" class="p-2">
+            <Label text="{{ authorName }}" class="text-sm text-gray-600" />
+            <Label text=" • " class="text-sm text-gray-600" />
+            <Label text="{{ publishedAt, 'dd MMM yyyy' }}" class="text-sm text-gray-600" />
+          </StackLayout>
+        </GridLayout>
+      </ListView.itemTemplate>
+    </ListView>
+
+    <!-- Social Share Options -->
+    <GridLayout row="2" columns="*, *, *, *, *, *, *" class="p-2 bg-white border-t">
+      <Label col="0" text="&#xf082;" class="fab text-lg text-facebook" tap="{{ onFacebookShare }}" />
+      <Label col="1" text="&#xf099;" class="fab text-lg text-twitter" tap="{{ onTwitterShare }}" />
+      <Label col="2" text="&#xf16d;" class="fab text-lg text-instagram" tap="{{ onInstagramShare }}" />
+      <Label col="3" text="&#xf167;" class="fab text-lg text-youtube" tap="{{ onYouTubeShare }}" />
+      <Label col="4" text="&#xf0e1;" class="fab text-lg text-linkedin" tap="{{ onLinkedInShare }}" />
+      <Label col="5" text="&#xf2c6;" class="fab text-lg text-telegram" tap="{{ onTelegramShare }}" />
+      <Label col="6" text="&#xf232;" class="fab text-lg text-whatsapp" tap="{{ onWhatsAppShare }}" />
+    </GridLayout>
+  </GridLayout>
+</Page>

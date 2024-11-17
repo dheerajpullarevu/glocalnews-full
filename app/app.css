@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+Page {
+  background-color: #f5f5f5;
+}
+
+.fas {
+  font-family: "Font Awesome 5 Free", "fa-solid-900";
+  font-weight: 900;
+}
+
+.fab {
+  font-family: "Font Awesome 5 Brands", "fa-brands-400";
+  font-weight: 400;
+}
+
+.action-bar {
+  background-color: #dc2626;
+  color: white;
+}
+
+.list-group-item {
+  background-color: white;
+  margin: 8 16;
+  border-radius: 8;
+}
+
+.list-group-item Image {
+  border-radius: 8;
+}
+
+.category-pill {
+  background-color: #f3f4f6;
+  padding: 8 16;
+  margin: 0 4;
+  border-radius: 16;
+}
+
+.category-pill.active {
+  background-color: #dc2626;
+  color: white;
+}
+
+.text-facebook { color: #1877f2; }
+.text-twitter { color: #1da1f2; }
+.text-instagram { color: #e4405f; }
+.text-youtube { color: #ff0000; }
+.text-linkedin { color: #0077b5; }
+.text-telegram { color: #0088cc; }
+.text-whatsapp { color: #25d366; }
+
+.bottom-nav {
+  background-color: white;
+  border-top-width: 1;
+  border-top-color: #e5e7eb;
+}
+
+.bottom-nav Label {
+  color: #6b7280;
+}
+
+.bottom-nav .active {
+  color: #dc2626;
+}

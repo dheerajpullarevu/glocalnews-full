@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Frame defaultPage="pages/home/home-page">
+  <ActionBar title="Glocal News" class="action-bar">
+    <NavigationButton visibility="collapsed" />
+    <ActionItem 
+      ios.position="right" 
+      android.position="actionBar"
+      tap="onProfileTap">
+      <Label text="&#xf007;" class="fas" />
+    </ActionItem>
+  </ActionBar>
+</Frame>
